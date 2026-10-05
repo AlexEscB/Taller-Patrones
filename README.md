@@ -7,14 +7,18 @@ Implementación en Java que integra **Bridge, Builder, Chain of Responsibility, 
 
 ```
 src/
-├── app/           Main y ExportadorPipeline (orquesta el flujo completo)
-├── mediator/      Mediator: DocumentEditorMediator y componentes de la interfaz
-├── builder/       Builder: DocumentBuilder, builders concretos, Director y Plantilla
-├── flyweight/     Flyweight: Glifo, GlifoFactory y ElementoVisual (estado extrínseco)
-├── model/         Estructura del documento: Contenido, Bloque, Texto y derivados
-├── chain/         Chain of Responsibility: ProcesadorHandler y manejadores
-├── interpreter/   Interpreter: Expresion, terminales, no terminales y parser
-└── bridge/        Bridge: Documento (abstracción) y RenderizadorEngine (implementación)
+├── construccion_documento/
+│   ├── builder/    Builder: DocumentBuilder, builders concretos, Director y Plantilla
+│   └── flyweight/  Flyweight: Glifo, GlifoFactory y ElementoVisual (estado extrínseco)
+├── renderizado/
+│   └──             Bridge: Documento (abstracción) y RenderizadorEngine (implementación)
+├── procesamiento_contenido/
+│   ├── chain/      Chain of Responsibility: ProcesadorHandler y manejadores
+│   └── interpreter/ Interpreter: Expresion, terminales, no terminales y parser
+└── coordinacion_exportacion/
+    ├── app/        Main y ExportadorPipeline (orquesta el flujo completo)
+    ├── mediator/   Mediator: DocumentEditorMediator y componentes de la interfaz
+    └── model/      Estructura del documento: Contenido, Bloque, Texto y derivados
 ```
 
 ## Cómo se integran los patrones
@@ -35,7 +39,7 @@ Linux / macOS:
 ```bash
 mkdir -p out
 javac -encoding UTF-8 -d out $(find src -name "*.java")
-java -cp out app.Main
+java -cp out coordinacion_exportacion.app.Main
 ```
 
 Windows (PowerShell):
@@ -44,7 +48,7 @@ Windows (PowerShell):
 mkdir out
 Get-ChildItem -Recurse src -Filter *.java | ForEach-Object { $_.FullName } | Out-File -Encoding ascii sources.txt
 javac -encoding UTF-8 -d out "@sources.txt"
-java -cp out app.Main
+java -cp out coordinacion_exportacion.app.Main
 ```
 
 Requiere Java 11 o superior. Los archivos generados quedan en la carpeta `salida/`.
