@@ -1,0 +1,15 @@
+%PDF-SIMULADO 1.0
+% Titulo: Reporte Ejecutivo Trimestral
+--- PAGINA 1 ---
+/Img iconos/logo-empresa.png Do
+BT /F-Bold 20 Tf (Reporte Ejecutivo Trimestral) Tj ET
+BT /F1 11 Tf (Fecha de emision: 2026-10-04. Este documento es ************ y no debe compartirse.) Tj ET
+/Img iconos/logo-empresa.png Do
+BT /F-Bold 14 Tf (Resumen de ventas) Tj ET
+BT /F1 11 Tf (El ******** del portal es *******. Las ventas del periodo superan la meta prevista.) Tj ET
+--- PAGINA 2 ---
+TABLA [Concepto | Cantidad | Valor]
+FILA  [Licencias | 3 | 3,000,000.00]
+FILA  [Total con IVA menos descuento | 1 | 1,140,000.00]
+BT /F1 9 Tf (Reporte generado por el Motor de Documentos Inteligentes) Tj ET
+%%EOF
