@@ -1,4 +1,3 @@
-// Patrón implementado: Bridge
 package renderizado;
 
 import coordinacion_exportacion.model.Bloque;
